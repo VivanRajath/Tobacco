@@ -109,6 +109,14 @@ function Products() {
         <div className="products-page">
             {/* Hero Section */}
             <section className="hero">
+                <div className="hero-image-container">
+                    <img
+                        src="/assets/tobacco_leaves_product_banner.png"
+                        alt="Premium Tobacco Leaves"
+                        className="hero-image"
+                    />
+                    <div className="hero-overlay"></div>
+                </div>
                 <div className="container">
                     <div className="hero-content fade-in">
                         <FaLeaf className="hero-icon" />

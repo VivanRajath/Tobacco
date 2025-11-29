@@ -99,61 +99,6 @@
 }
 
 .hero-actions {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.btn-large {
-    padding: 1.125rem 2.5rem;
-    font-size: 1.125rem;
-}
-
-.hero-decoration {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.decoration-circle {
-    position: absolute;
-    border-radius: 50%;
-    border: 2px solid rgba(184, 134, 11, 0.1);
-    animation: float 20s infinite ease-in-out;
-}
-
-.circle-1 {
-    width: 300px;
-    height: 300px;
-    top: 10%;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.circle-2 {
-    width: 200px;
-    height: 200px;
-    bottom: 20%;
-    right: 15%;
-    animation-delay: 5s;
-}
-
-.circle-3 {
-    width: 150px;
-    height: 150px;
-    top: 50%;
-    right: 20%;
-    animation-delay: 10s;
-}
-
-/* Stats Section */
-.stats-section {
-    padding: 4rem 0;
     background: var(--tobacco-dark);
     border-top: 2px solid var(--tobacco-gold);
     border-bottom: 2px solid var(--tobacco-gold);

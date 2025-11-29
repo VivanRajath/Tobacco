@@ -96,8 +96,8 @@ function Home() {
             <section className="hero-section">
                 <div className="hero-image-container">
                     <img
-                        src="https://images.unsplash.com/photo-1566933293069-b55c7c7e5ce8?w=1920&q=80"
-                        alt="Premium Tobacco Trading"
+                        src="/assets/tobacco_plantation_hero.png"
+                        alt="Premium Tobacco Plantation"
                         className="hero-image"
                     />
                     <div className="hero-overlay"></div>
@@ -130,12 +130,6 @@ function Home() {
                             </Link>
                         </div>
                     </div>
-                </div>
-
-                <div className="hero-decoration">
-                    <div className="decoration-circle circle-1"></div>
-                    <div className="decoration-circle circle-2"></div>
-                    <div className="decoration-circle circle-3"></div>
                 </div>
             </section>
 
