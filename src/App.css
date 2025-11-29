@@ -1,0 +1,11 @@
+/* App-specific styles */
+main {
+  min-height: calc(100vh - 140px);
+  padding: 2rem 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

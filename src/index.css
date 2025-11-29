@@ -1,0 +1,326 @@
+:root {
+  /* Tobacco Brown Color Palette */
+  --tobacco-dark: #2d1f16;
+  --tobacco-brown: #4a3428;
+  --tobacco-medium: #6b4423;
+  --tobacco-gold: #b8860b;
+  --tobacco-tan: #d2b48c;
+  --tobacco-light: #f5deb3;
+  
+  /* Accent Colors */
+  --gold-accent: #daa520;
+  --amber-glow: #ffbf00;
+  --cream: #faf0e6;
+  
+  /* Neutral Colors */
+  --dark-bg: #1a120c;
+  --card-bg: #3a2a1e;
+  --border-color: rgba(184, 134, 11, 0.3);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--tobacco-dark) 100%);
+  color: var(--cream);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--tobacco-light);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+
+p {
+  color: var(--tobacco-tan);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--tobacco-gold) 0%, var(--gold-accent) 100%);
+  color: var(--dark-bg);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(218, 165, 32, 0.4);
+}
+
+.btn-secondary {
+  background: var(--tobacco-brown);
+  color: var(--tobacco-light);
+  border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--tobacco-medium);
+  border-color: var(--tobacco-gold);
+  transform: translateY(-2px);
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--tobacco-gold);
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--tobacco-light);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: var(--tobacco-dark);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--cream);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--tobacco-gold);
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--tobacco-tan);
+  opacity: 0.6;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.file-upload {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.file-upload input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: var(--tobacco-brown);
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  color: var(--tobacco-light);
+  transition: all var(--transition-fast);
+}
+
+.file-upload:hover .file-upload-label {
+  border-color: var(--tobacco-gold);
+  background: var(--tobacco-medium);
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: var(--tobacco-brown);
+  color: var(--tobacco-light);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--tobacco-gold);
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--tobacco-tan);
+}
+
+tr:hover {
+  background: rgba(184, 134, 11, 0.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .grid {
+    gap: 1.5rem;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  th, td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}

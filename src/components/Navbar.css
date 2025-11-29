@@ -1,0 +1,139 @@
+.navbar {
+    background: var(--tobacco-brown);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--tobacco-gold);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--tobacco-light);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.brand-icon {
+    color: var(--tobacco-gold);
+    font-size: 1.75rem;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.navbar-brand:hover {
+    color: var(--tobacco-gold);
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--tobacco-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color var(--transition-fast);
+}
+
+.mobile-toggle:hover {
+    color: var(--tobacco-gold);
+}
+
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--tobacco-tan);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--tobacco-gold);
+    transition: width var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--tobacco-light);
+    background: rgba(184, 134, 11, 0.1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+.nav-link.active {
+    color: var(--tobacco-gold);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: block;
+    }
+
+    .navbar-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--tobacco-dark);
+        padding: 1rem;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all var(--transition-normal);
+        box-shadow: var(--shadow-md);
+    }
+
+    .navbar-links.active {
+        max-height: 300px;
+        opacity: 1;
+        padding: 1rem;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+    }
+}

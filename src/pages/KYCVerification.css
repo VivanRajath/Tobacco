@@ -1,0 +1,204 @@
+.kyc-page {
+    padding: 3rem 0;
+    min-height: 100vh;
+}
+
+.kyc-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.kyc-header h1 {
+    color: var(--tobacco-light);
+    margin-bottom: 0.75rem;
+}
+
+.kyc-header p {
+    color: var(--tobacco-tan);
+    font-size: 1.125rem;
+}
+
+/* Progress Indicator */
+.progress-container {
+    margin-top: 2.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.progress-label {
+    color: var(--tobacco-light);
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.progress-percentage {
+    color: var(--tobacco-gold);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.progress-bar {
+    height: 12px;
+    background: var(--dark-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--tobacco-gold) 0%, var(--gold-accent) 100%);
+    border-radius: 12px;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0.5rem;
+}
+
+.progress-check {
+    color: var(--dark-bg);
+    font-size: 1rem;
+    animation: checkBounce 0.5s ease;
+}
+
+@keyframes checkBounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.progress-steps .step {
+    flex: 1;
+    padding: 1rem;
+    background: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.progress-steps .step span {
+    color: var(--tobacco-tan);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.progress-steps .step.complete {
+    background: linear-gradient(135deg, rgba(184, 134, 11, 0.2) 0%, rgba(218, 165, 32, 0.2) 100%);
+    border-color: var(--tobacco-gold);
+}
+
+.progress-steps .step.complete span {
+    color: var(--tobacco-gold);
+    font-weight: 600;
+}
+
+/* KYC Form */
+.kyc-form {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+}
+
+.form-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+}
+
+.section-heading {
+    color: var(--tobacco-gold);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .kyc-form {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .progress-container {
+        padding: 1.5rem;
+    }
+
+    .progress-steps {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .kyc-page {
+        padding: 2rem 0;
+    }
+
+    .kyc-form {
+        padding: 1.25rem;
+    }
+
+    .section-heading {
+        font-size: 1.25rem;
+    }
+
+    .progress-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

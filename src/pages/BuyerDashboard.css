@@ -1,0 +1,117 @@
+.dashboard-page {
+    padding: 3rem 0;
+    min-height: 100vh;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 0.75rem;
+}
+
+.dashboard-header p {
+    color: var(--tobacco-tan);
+    font-size: 1.125rem;
+}
+
+.stats-grid {
+    margin-bottom: 4rem;
+}
+
+.transactions-section {
+    margin-top: 3rem;
+}
+
+.section-title {
+    color: var(--tobacco-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+}
+
+.order-id {
+    font-family: 'Courier New', monospace;
+    color: var(--tobacco-gold);
+    font-weight: 600;
+}
+
+.product-name {
+    color: var(--tobacco-light);
+    font-weight: 500;
+}
+
+.amount {
+    color: var(--tobacco-gold);
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-delivered {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.status-transit {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+    border: 1px solid #ffc107;
+}
+
+.status-processing {
+    background: rgba(23, 162, 184, 0.2);
+    color: #17a2b8;
+    border: 1px solid #17a2b8;
+}
+
+@media (max-width: 768px) {
+    .dashboard-page {
+        padding: 2rem 0;
+    }
+
+    .stats-grid {
+        margin-bottom: 2rem;
+    }
+
+    .table-wrapper {
+        font-size: 0.875rem;
+    }
+
+    th,
+    td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    /* Make table scrollable on mobile */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 700px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .status-badge {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.75rem;
+    }
+}
